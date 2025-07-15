@@ -6,8 +6,16 @@ name = "pypi"
 [packages]
 django = "*"
 django-debug-toolbar = "*"
+mongoengine = "*"
+mysql-connector-python = "*"
+pillow = "*"
+django-mongoengine = "*"
+django-mongodb-backend = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.13"
+
+[pipenv]
+allow_prereleases = true

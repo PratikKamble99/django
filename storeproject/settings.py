@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import mysql.connector.django
+import django_mongodb_backend
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,7 +44,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'playground', ## custom app 
-    "debug_toolbar"
+    "debug_toolbar",
+    # 'django_mongodb_backend'
 ]
 
 MIDDLEWARE = [
@@ -79,13 +83,30 @@ WSGI_APPLICATION = "storeproject.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
+# mongodb+srv://pratikkamble522000:<db_password>@cluster0.5tpbgr5.mongodb.net/
+# DATABASES = {
+#     "default": django_mongodb_backend.parse_uri(
+#         "mongodb+srv://pratikkamble522000:pratikkamble522000@cluster0.5tpbgr5.mongodb.net/", db_name="django-tut"
+#     ),
+# }
+
+DATABASES = {
+            'default': {
+                'ENGINE': 'mysql.connector.django',
+                'NAME': 'django',  # Replace with your database name
+                'USER': 'root',  # Replace with your MySQL username
+                'PASSWORD': 'pratik123',  # Replace with your MySQL password
+                'HOST': 'localhost',  # Or the IP address/hostname of your MySQL server
+                'PORT': '3306',  # Default MySQL port
+            }
+        }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
