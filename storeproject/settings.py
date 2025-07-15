@@ -93,7 +93,7 @@ WSGI_APPLICATION = "storeproject.wsgi.application"
 # mongodb+srv://pratikkamble522000:<db_password>@cluster0.5tpbgr5.mongodb.net/
 # DATABASES = {
 #     "default": django_mongodb_backend.parse_uri(
-#         "mongodb+srv://pratikkamble522000:pratikkamble522000@cluster0.5tpbgr5.mongodb.net/", db_name="django-tut"
+#         "mongodb+srv://pratikkamble522000:<pass>@cluster0.5tpbgr5.mongodb.net/", db_name="django-tut"
 #     ),
 # }
 
