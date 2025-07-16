@@ -1,4 +1,8 @@
 <form method="post" enctype="multipart/form-data">
-  {% csrf_token %} {{ form.as_p }}
+  {% csrf_token %}
+  <table>
+    {{ form.as_table }} {% comment %} Render manually form fields {%endcomment%}
+    {% comment %} {{form.name.label}} {{form.name.value}} {% endcomment %}
+  </table>
   <button type="submit">Create Product</button>
 </form>

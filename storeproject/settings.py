@@ -24,13 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+print(os.environ.get('DJANGO_SECRET_KEY', 'fallback-insecure-key'))
 SECRET_KEY = "django-insecure-k&2x)%0ca*9+l^c@k*-*c9bj3j7)sgklvp=b2+p&n@rc#&w&7y"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 DEBUG = True
 
-
+# if debug false add your domains in ALLOWED_HOST.
+# If you want to allow all domain add '*' in array
 ALLOWED_HOSTS = []
 
 
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'playground', ## custom app 
+    'course',
     "debug_toolbar",
     # 'django_mongodb_backend'
 ]
