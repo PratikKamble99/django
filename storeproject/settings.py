@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import os
 import mysql.connector.django
-import django_mongodb_backend
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -60,7 +59,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
-
+    'course.middleware.AuthRequiredMiddleware'
 ]
 
 ROOT_URLCONF = "storeproject.urls"

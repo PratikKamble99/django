@@ -11,6 +11,7 @@ mysql-connector-python = "*"
 pillow = "*"
 django-mongoengine = "*"
 django-mongodb-backend = "*"
+djangorestframework = "*"
 
 [dev-packages]
 
